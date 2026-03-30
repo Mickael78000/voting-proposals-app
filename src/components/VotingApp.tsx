@@ -147,6 +147,14 @@ export function VotingApp() {
     setProposalId('');
   };
 
+  const handleResetWorkflow = () => {
+    writeContract({
+      ...VOTING_CONTRACT,
+      functionName: 'resetWorkflow',
+      gas: 500000n,
+    });
+  };
+
   
 
   const formatAddress = (addr: string) => {
@@ -290,6 +298,14 @@ export function VotingApp() {
                       disabled={isPending}
                     >
                       Tally Votes
+                    </button>
+                    <button
+                      onClick={handleResetWorkflow}
+                      className={`${styles.button} ${styles.buttonSecondary}`}
+                      disabled={isPending || currentStatus !== 'Votes Tallied'}
+                      title="Reset workflow after votes are tallied"
+                    >
+                      Reset Workflow
                     </button>
                   </div>
                 </div>
