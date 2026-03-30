@@ -1,7 +1,7 @@
 import VotingABI from './Voting.json';
 
 export const VOTING_CONTRACT = {
-  address: '0xA5dF5738a350c56EB928D465bCF84f2A8eAe5458' as `0x${string}`,
+  address: '0x7d17f866001Db10E0F2b12cD069F86464753ea9c' as `0x${string}`,
   abi: VotingABI.abi,
 } as const;
 
